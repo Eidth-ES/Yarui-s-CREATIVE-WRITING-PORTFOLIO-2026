@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王雅睿 · 创意写作作品合集</title>
+<meta name="description" content="王雅睿创意写作作品集：原创武侠小说、女性向游戏同人文、个人播客脚本、文学研究论文。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#hero">
+      <span class="brand-mark">W</span>
+      <span class="brand-text">
+        <strong>王雅睿</strong>
+        <em>Creative Writing Portfolio</em>
+      </span>
+    </a>
+    <nav class="topnav" id="topnav">
+      <a href="#sec-wuxia" data-nav="sec-wuxia">原创武侠</a>
+      <a href="#sec-fanfic" data-nav="sec-fanfic">游戏同人文</a>
+      <a href="#sec-podcast" data-nav="sec-podcast">播客脚本</a>
+      <a href="#sec-research" data-nav="sec-research">文学研究</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+</header>
+
+<!-- ============ 首页 Hero ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">
+        <span class="dot"></span>CREATIVE WRITING PORTFOLIO · 2026
+      </div>
+      <h1 class="hero-title reveal" data-delay="1">
+        创意写作<br><span class="grad">作品合集</span>
+      </h1>
+      <p class="hero-sub reveal" data-delay="2">
+        武侠 · 女性向游戏同人文 · 播客 · 文学研究
+      </p>
+      <p class="hero-desc reveal" data-delay="3">
+        Welcome to my portfolio~
+      </p>
+      <div class="hero-actions reveal" data-delay="4">
+        <a class="btn btn-primary" href="#sec-wuxia">
+          浏览作品<span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="hero-facts reveal" data-delay="5">
+        <div class="fact">
+          <span class="fact-num" data-count="4">0</span>
+          <span class="fact-label">创作板块</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="9">0</span>
+          <span class="fact-label">《逢故人》章节</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="15">0</span>
+          <span class="fact-label">同人篇目</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="30000" data-suffix="+">0</span>
+          <span class="fact-label">《欲白》设定字数</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right reveal" data-delay="3">
+      <div class="portrait-card">
+        <div class="portrait-inner">
+          <div class="portrait-initial">雅睿</div>
+          <div class="portrait-ring"></div>
+        </div>
+        <div class="portrait-meta">
+          <span class="tag">上海大学</span>
+          <span class="tag">2027 届硕士</span>
+          <span class="tag">外国语言文学</span>
+        </div>
+        <div class="portrait-line"></div>
+        <p class="portrait-quote">
+          <br> To live, to err, to fall, to triumph, to recreate life out of life.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scrollhint">
+    <span>向下滚动</span>
+    <i></i>
+  </div>
+</section>
+
+<!-- ============ 内容分区导航条 ============ -->
+<div class="section-tabs" id="sectionTabs">
+  <div class="section-tabs-inner">
+    <button class="tab active" data-jump="sec-wuxia"><b>01</b> 原创武侠小说</button>
+    <button class="tab" data-jump="sec-fanfic"><b>02</b> 女性向游戏同人文</button>
+    <button class="tab" data-jump="sec-podcast"><b>03</b> 个人播客脚本</button>
+    <button class="tab" data-jump="sec-research"><b>04</b> 文学研究类论文</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ 01 原创武侠小说 ============ -->
+<section class="section" id="sec-wuxia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01</div>
+      <div class="sec-head-text">
+        <h2>原创武侠小说</h2>
+        <p id="wuxiaIntro"></p>
+      </div>
+    </div>
+
+    <div class="piece-list" id="wuxiaList"></div>
+  </div>
+</section>
+
+<!-- ============ 02 女性向游戏同人文 ============ -->
+<section class="section section-alt" id="sec-fanfic">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02</div>
+      <div class="sec-head-text">
+        <h2>女性向游戏同人文</h2>
+        <p>把「你」与角色之间的关系，写进最具体的生活细节里。左侧目录按篇目索引，点击即可跳转至对应正文。</p>
+      </div>
+    </div>
+
+    <!-- 卷级切换 -->
+    <div class="volume-switch reveal" id="volumeSwitch"></div>
+
+    <!-- 阅读器：左侧目录 + 右侧正文 -->
+    <div class="reader reveal" id="fanficReader">
+      <aside class="reader-side">
+        <div class="side-head">
+          <button class="side-back" id="sideBack">
+            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>返回</span>
+          </button>
+          <h3 id="sideTitle">目录</h3>
+          <p class="side-sub" id="sideSub"></p>
+        </div>
+        <nav class="side-nav" id="sideNav"></nav>
+        <div class="side-foot" id="sideFoot"></div>
+      </aside>
+
+      <div class="reader-main" id="readerMain">
+        <article class="reader-article" id="readerArticle"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 个人播客脚本 ============ -->
+<section class="section" id="sec-podcast">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03</div>
+      <div class="sec-head-text">
+        <h2>个人播客脚本</h2>
+        <p id="podcastOneLine"></p>
+      </div>
+    </div>
+
+    <div class="podcast-card reveal" id="podcastCard"></div>
+
+    <div class="reader reader-simple reveal" id="podReader">
+      <aside class="reader-side">
+        <div class="side-head">
+          <h3>脚本结构</h3>
+          <p class="side-sub" id="podSideSub"></p>
+        </div>
+        <nav class="side-nav" id="podNav"></nav>
+      </aside>
+      <div class="reader-main">
+        <article class="reader-article" id="podArticle"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 文学研究类论文 ============ -->
+<section class="section section-alt" id="sec-research">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04</div>
+      <div class="sec-head-text">
+        <h2>文学研究类论文</h2>
+        <p id="researchOneLine"></p>
+      </div>
+    </div>
+    <div class="paper-list" id="paperList"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-left">
+      <span class="brand-mark small">W</span>
+      <div>
+        <p class="footer-name">王雅睿 · 创意写作作品合集</p>
+        <p class="footer-tip">合订本 · 2026 秋招求职作品集</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>点击任一作品标题可展开阅读全文</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="content-wuxia.js"></script>
+<script src="content-fanfic.js"></script>
+<script src="content-misc.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
