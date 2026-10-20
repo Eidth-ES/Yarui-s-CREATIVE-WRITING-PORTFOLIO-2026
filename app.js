@@ -513,8 +513,6 @@
   function renderPodcast() {
     const d = window.PODCAST;
     if (!d) return;
-    $('#podcastOneLine').textContent = d.oneLine;
-
     const card = $('#podcastCard');
     card.innerHTML =
       '<div class="pod-cover"><span>EDITH</span><b>牡蛎</b><span>世界</span></div>' +
@@ -572,7 +570,7 @@
     let html = '<header class="art-head">' +
       '<div class="art-crumb"><span>' + esc(d.platform) + '</span><span class="sep">/</span><span>' + esc(d.show) + '</span><span class="sep">/</span><span class="cur">' + esc(ep.no) + '</span></div>' +
       '<h1 class="art-title">' + esc(ep.title) + '</h1>' +
-      '<p class="art-sub">' + esc(d.oneLine) + '</p>' +
+
       '</header><div class="art-body">';
 
     ep.segments.forEach(s => {

@@ -265,8 +265,20 @@ img{ max-width:100%; display:block; }
   width:100%; height:100%; border-radius:50%;
   display:grid; place-items:center;
   font-size:26px; font-weight:700; letter-spacing:2px;
-  background:linear-gradient(140deg,rgba(0,82,217,.16),rgba(38,111,232,.12));
+  background:#fff;
   border:1px solid var(--line-3);
+  overflow:hidden;
+}
+.portrait-initial img{
+  width:100%; height:100%; object-fit:cover; border-radius:50%; display:block;
+}
+.portrait-name{
+  margin-top:12px;
+  font-family:var(--f-serif);
+  font-size:17px; font-weight:700; letter-spacing:2px;
+  color:var(--t-1);
+}
+.portrait-initial{
   color:var(--tx-blue);
   font-family:var(--f-serif);
 }
