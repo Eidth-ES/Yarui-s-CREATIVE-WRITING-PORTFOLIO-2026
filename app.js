@@ -63,7 +63,7 @@
   }
 
   function initNavSpy() {
-    const ids = ['sec-wuxia', 'sec-fanfic', 'sec-podcast', 'sec-research'];
+    const ids = ['sec-wuxia', 'sec-fanfic', 'sec-tvfan', 'sec-qimao', 'sec-podcast', 'sec-research', 'sec-other'];
     const navLinks = {};
     ids.forEach(id => {
       const a = $('.topnav a[data-nav="' + id + '"]');
@@ -81,7 +81,7 @@
       Object.keys(navLinks).forEach(id =>
         navLinks[id].classList.toggle('active', id === cur));
 
-      const tabIdx = ['sec-wuxia', 'sec-fanfic', 'sec-podcast', 'sec-research'].indexOf(cur);
+      const tabIdx = ['sec-wuxia', 'sec-fanfic', 'sec-tvfan', 'sec-qimao', 'sec-podcast', 'sec-research', 'sec-other'].indexOf(cur);
       tabs.forEach((t, i) => t.classList.toggle('active', i === tabIdx));
     }
     window.addEventListener('scroll', spy, { passive: true });
@@ -164,9 +164,11 @@
             (piece.tag ? '<span class="piece-tag">' + esc(piece.tag) + '</span>' : '') +
           '</div>' +
           '<p class="piece-oneline">' + esc(piece.oneLine) + '</p>' +
-          '<div class="piece-meta">' +
-            piece.meta.map(m => '<span>' + esc(m) + '</span>').join('') +
-          '</div>' +
+          ((piece.meta && piece.meta.length)
+            ? '<div class="piece-meta">' +
+                piece.meta.map(m => '<span>' + esc(m) + '</span>').join('') +
+              '</div>'
+            : '') +
         '</div>' +
         '<div class="piece-toggle"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
       card.appendChild(head);
@@ -206,7 +208,7 @@
       // 章节索引 chips + 正文
       if (piece.chapters && piece.chapters.length) {
         const chips = el('div', 'chapter-chips');
-        chips.appendChild(el('div', 'chapter-chips-label', '章节索引 · 点击跳转'));
+        chips.appendChild(el('div', 'chapter-chips-label', piece.chaptersLabel || '章节索引 · 点击跳转'));
         piece.chapters.forEach((c, i) => {
           const chip = el('button', 'chip');
           chip.innerHTML = '<i>' + String(i + 1).padStart(2, '0') + '</i><span>' + esc(c.name) + '</span>';

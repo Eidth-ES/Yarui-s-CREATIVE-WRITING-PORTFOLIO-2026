@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王雅睿 · 创意写作作品合集</title>
+<meta name="description" content="王雅睿创意写作作品集：原创武侠小说、女性向游戏同人文、个人播客脚本、文学研究论文。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#hero">
+      <span class="brand-mark">W</span>
+      <span class="brand-text">
+        <strong>王雅睿</strong>
+        <em>Creative Writing Portfolio</em>
+      </span>
+    </a>
+    <nav class="topnav" id="topnav">
+      <a href="#sec-wuxia" data-nav="sec-wuxia">原创武侠</a>
+      <a href="#sec-fanfic" data-nav="sec-fanfic">游戏同人文</a>
+      <a href="#sec-tvfan" data-nav="sec-tvfan">影视同人</a>
+      <a href="#sec-podcast" data-nav="sec-podcast">播客脚本</a>
+      <a href="#sec-research" data-nav="sec-research">文学研究</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+</header>
+
+<!-- ============ 首页 Hero ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">
+        <span class="dot"></span>CREATIVE WRITING PORTFOLIO · 2026
+      </div>
+      <h1 class="hero-title reveal" data-delay="1">
+        创意写作<br><span class="grad">作品合集</span>
+      </h1>
+      <p class="hero-sub reveal" data-delay="2">
+        武侠 · 女性向游戏同人文 · 影视同人 · 播客 · 文学研究
+      </p>
+      <p class="hero-desc reveal" data-delay="3">
+        Welcome to my portfolio~
+      </p>
+      <div class="hero-actions reveal" data-delay="4">
+        <a class="btn btn-primary" href="#sec-wuxia">
+          浏览作品<span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="hero-facts reveal" data-delay="5">
+        <div class="fact">
+          <span class="fact-num" data-count="5">0</span>
+          <span class="fact-label">创作板块</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="9">0</span>
+          <span class="fact-label">《逢故人》章节</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="15">0</span>
+          <span class="fact-label">同人篇目</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact">
+          <span class="fact-num" data-count="30000" data-suffix="+">0</span>
+          <span class="fact-label">《欲白》设定字数</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right reveal" data-delay="3">
+      <div class="portrait-card">
+        <div class="portrait-inner">
+          <div class="portrait-initial">雅睿</div>
+          <div class="portrait-ring"></div>
+        </div>
+        <div class="portrait-meta">
+          <span class="tag">上海大学</span>
+          <span class="tag">2027 届硕士</span>
+          <span class="tag">外国语言文学</span>
+        </div>
+        <div class="portrait-line"></div>
+        <p class="portrait-quote">
+        <br>To live, to err, to fall, to triumph, to recreate life out of life.。」
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scrollhint">
+    <span>向下滚动</span>
+    <i></i>
+  </div>
+</section>
+
+<!-- ============ 内容分区导航条 ============ -->
+<div class="section-tabs" id="sectionTabs">
+  <div class="section-tabs-inner">
+    <button class="tab active" data-jump="sec-wuxia"><b>01</b> 原创武侠小说</button>
+    <button class="tab" data-jump="sec-fanfic"><b>02</b> 女性向游戏同人文</button>
+    <button class="tab" data-jump="sec-tvfan"><b>03</b> 影视同人</button>
+    <button class="tab" data-jump="sec-podcast"><b>04</b> 个人播客脚本</button>
+    <button class="tab" data-jump="sec-research"><b>05</b> 文学研究类论文</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ 01 原创武侠小说 ============ -->
+<section class="section" id="sec-wuxia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01</div>
+      <div class="sec-head-text">
+        <h2>原创武侠小说</h2>
+        <p id="wuxiaIntro"></p>
+      </div>
+    </div>
+
+    <div class="piece-list" id="wuxiaList"></div>
+  </div>
+</section>
+
+<!-- ============ 02 女性向游戏同人文 ============ -->
+<section class="section section-alt" id="sec-fanfic">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02</div>
+      <div class="sec-head-text">
+        <h2>女性向游戏同人文</h2>
+        <p>把「你」与角色之间的关系，写进最具体的生活细节里。左侧目录按篇目索引，点击即可跳转至对应正文。</p>
+      </div>
+    </div>
+
+    <!-- 账号展示：小红书 + LOFTER -->
+    <div class="acct-showcase reveal" id="fanficAccount">
+      <div class="acct-links">
+        <a class="acct-link xhs" href="https://www.xiaohongshu.com/user/profile/6561e477000000001000aa93?xsec_token=AB_4SF_W24wPtJNfGzpTGXUqa0irpFjQ-4HVTK3wig4Ow%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener">
+          <span class="acct-badge">小红书</span>
+          <span class="acct-name">@竹子梨3246</span>
+          <span class="acct-cta">点击访问主页 <svg viewBox="0 0 24 24" width="13" height="13"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="acct-link lofter" href="https://zhuli65553.lofter.com" target="_blank" rel="noopener">
+          <span class="acct-badge">LOFTER</span>
+          <span class="acct-name">@zhuli65553</span>
+          <span class="acct-cta">点击访问主页 <svg viewBox="0 0 24 24" width="13" height="13"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+      <p class="acct-note">账号运营展示 · 以下为「影视衍生 / 女性向游戏同人文」账号的内容与数据截图</p>
+      <figure class="acct-shot">
+        <img src="影视衍生内容账号.jpg" alt="影视衍生内容账号数据展示" loading="lazy">
+        <figcaption>账号概览 · 影视衍生内容账号运营数据</figcaption>
+      </figure>
+      <figure class="acct-shot">
+        <img src="图文节选.jpg" alt="笔记图文节选" loading="lazy">
+        <figcaption>笔记图文节选 · 同人内容呈现</figcaption>
+      </figure>
+    </div>
+
+    <!-- 卷级切换 -->
+    <div class="volume-switch reveal" id="volumeSwitch"></div>
+
+    <!-- 阅读器：左侧目录 + 右侧正文 -->
+    <div class="reader reveal" id="fanficReader">
+      <aside class="reader-side">
+        <div class="side-head">
+          <button class="side-back" id="sideBack">
+            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>返回</span>
+          </button>
+          <h3 id="sideTitle">目录</h3>
+          <p class="side-sub" id="sideSub"></p>
+        </div>
+        <nav class="side-nav" id="sideNav"></nav>
+        <div class="side-foot" id="sideFoot"></div>
+      </aside>
+
+      <div class="reader-main" id="readerMain">
+        <article class="reader-article" id="readerArticle"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 影视同人 ============ -->
+<section class="section" id="sec-tvfan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03</div>
+      <div class="sec-head-text">
+        <h2>影视同人</h2>
+        <p>电视剧《云之羽》角色「上官浅」故事续写。完整篇目与更多影视衍生创作，欢迎到我的 LOFTER 主页阅读。</p>
+      </div>
+    </div>
+
+    <div class="tvfan-grid reveal">
+      <div class="tvfan-side">
+        <figure class="tvfan-cover">
+          <img src="Group 1.jpg" alt="孤山 · LOFTER 合集封面：电视剧《云之羽》角色“上官浅”二创">
+          <figcaption>LOFTER 合集「孤山」 · 4 篇 · 1.1 万浏览<br>电视剧《云之羽》角色“上官浅”二创</figcaption>
+        </figure>
+        <a class="piece-link" href="https://zhuli65553.lofter.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          访问 LOFTER 主页 · zhuli65553.lofter.com
+        </a>
+      </div>
+
+      <article class="tvfan-article">
+        <header class="art-head">
+          <div class="art-crumb"><span>影视同人</span><span class="sep">/</span><span>云之羽</span><span class="sep">/</span><span class="cur">孤山</span></div>
+          <h1 class="art-title">孤山</h1>
+          <p class="art-sub">电视剧《云之羽》角色“上官浅”故事续写（节选）</p>
+        </header>
+        <div class="art-body">
+          <h3 class="art-sub-head">（一）</h3>
+          <p><b>她是孤山派遗孤，没人知道她真正的名字。</b></p>
+          <p>逃出宫门后，上官浅在几处隐蔽的地方都置了屋子，每隔一段时间，就会换个地方。</p>
+          <p>狡兔三窟，她要先保全自己。如今，无锋和宫门的人对她来说都是敌人，腹背受敌，再想获得点竹的行踪，并不容易。</p>
+          <p>这段时间，她在乡间养伤，调息，恢复元气。</p>
+          <p>再就是种杜鹃花，她在每处居所都种了杜鹃，她知道宫尚角的眼线在暗处看着她。</p>
+          <p>宫门重视后嗣，宫尚角果然还是没有彻底放手。</p>
+          <p>她浇着花，摸了摸微微隆起的地方，衣服上的布块缝的很结实，让一切看起来都天衣无缝。</p>
+          <p>在她喝药的时候，宫尚角的眼线离开了。</p>
+          <p>寒鸦柒死后，她彻底失去了无锋那边的信息来源，只知道，点竹这段时间会去墨山镇。</p>
+          <p>墨山镇，鱼龙混杂，各派隐瞒的交易，多在墨山镇的鱼痕鬼市进行，其中自然有无锋的势力。</p>
+          <p>无锋没有拿到无量流火，点竹势必不会善罢甘休，宫门在这个时候传出无量流火失踪的消息，对点竹来说，是危险的饵。对她来说，是唯一的机会。</p>
+          <p>她知道这是宫门设的局，隐秘，充满无尽的诱惑，但点竹不会放手，她很清楚这一点。</p>
+          <p>宫门与无锋马上就要有一场搏杀，世代的血仇，她清楚宫尚角的狠戾，也知道点竹的阴险，宫门与无锋势必不死不休。而这一次，是很好的机会，如今自己孤立无援，腹背受敌，最适合这种坐山观虎，渔翁得利的戏码。</p>
+          <p>她从屋里出来，确认宫尚角的眼线已经回来了。继续给杜鹃浇水，煮药，却在喝所谓安胎药的时候，故意打翻了碗，捂着肚子蹲在地上。</p>
+          <p>良久，院子外那片竹林微动，她蹲在地上，确认周围并无新的气息，知道这几日的眼线就只有一个人，电光火石间，凌厉的力道就带着风只击了回去。</p>
+          <p>来人没来得及反应，应声倒地。</p>
+          <p>宫尚角减少了看着她的人手，这一细微的变化，让她敏锐的觉察到，宫门准备在墨山镇动手了。放倒了宫尚角的眼线，她收拾了东西，把炉子里熬的药都浇在杜鹃花上。</p>
+          <h3 class="art-sub-head">（二）</h3>
+          <p>在去墨山镇前，她去了趟寒鸦柒的孤坟，在坟前浇了酒，挖出了埋在寒鸦柒坟旁的冷刃。</p>
+          <p>两日后，墨山镇，鱼痕鬼市。</p>
+          <p>天已经渐渐黑了下来，上官浅一身藏青色，手里的冷刃被她以一种很巧妙的方式掩在袖子下面，她混在零零散散的药贩间，进了鬼市。</p>
+          <p>鬼市里光影纷杂，高处的一扇窗被微微合上。</p>
+          <p>宫尚角带来的人已经拿到了点竹进入鬼市的消息。</p>
+          <p>他不意外，盯着楼梯上一晃一晃的灯影，等待他的猎物。</p>
+          <p>在这种时候，绝妙的计谋和布局，在巨大的令人窒息的诱惑面前都是多余的。只要饵足够诱人，他就能等来对方的剑，略带急切的，贪婪的剑。</p>
+          <p>楼外阴云密布，却没有风，因此一点细微的动静都能牵动暗处的响铃。</p>
+          <p>上官浅伏在楼外的一处高台，天气潮湿，周围一片寂静，在这里能听到楼里面的梯子一阵吱呀吱呀的声音。</p>
+          <p>她一路过来，发现这处木楼的四面八方都有埋伏，算算时间，宫尚角的半月之蝇就快要发作了，想来点竹比她还清楚这一点，这才有把握来抢无量流火。</p>
+          <p>宫门的人把木楼监视的死死的，尤其是刚刚那些铃铛，上官浅废了好大劲才绕开。</p>
+          <p>楼里的人和楼外的人都在等待猎物，一个危险的，随时都可能取人性命的猎物。</p>
+          <p>楼门外闪过一个紫色人影，几乎是电光火石之间，那人影就进了楼。</p>
+          <p>上官浅没有动，楼里面沉静了良久，只有几声模糊的人声。</p>
+          <p>等到楼里面传来兵器碰撞的声音，暗处宫门的侍卫与无锋赶来的人交了手，她握紧冷刃，飞身上了楼。</p>
+          <p>一路解决了不知道几个无锋还有宫门的人，到了楼里时，早就是一片狼藉，两派缠斗，上官浅踢开木窗。</p>
+          <p>点竹的剑将将划过宫尚角的耳朵。两个人的身上都有伤，看来是鏖战了有一会了。</p>
+          <p>上官浅的冷刃卷着楼里浓郁的血雾，从身侧击向点竹。</p>
+          <p>交战的两人都微愣了一瞬。</p>
+          <p>很快，墨色，藏青，紫衣三个影子就打在一处。</p>
+          <p>上官浅能感觉到身侧宫尚角的招式渐渐有些吃力，在他又一次用浮雪三式伤了点竹的左臂后，手里的刀便落地了。</p>
+          <p>宫尚角的半月之蝇发作了。</p>
+          <p>点竹冷冷一笑，看着上官浅。</p>
+          <p>上官浅没有说话，手里的冷刃没有一丝停滞，接下点竹的杀招。</p>
+          <p>仇人见面，分外眼红，上官浅的剑气里都是杀意，可她用无锋的招式来对付点竹，每一次杀招都被点竹化解。</p>
+          <p>上官浅打落了点竹的刀，代价是她手里的冷刃也被震飞了。</p>
+          <p>赤手空拳，两人从楼里打到楼外，点竹渐渐占据了上风。</p>
+          <p>「不自量力，你该去见那帮孤山的鬼了。」点竹挥拳，眼看就要落在上官浅的头上。就在这个间隙，上官浅一把抓住点竹刚刚被宫尚角刺伤的胳膊，借力一躲。</p>
+          <p>她手里的药粉渗进点竹的伤口，灼热的麻痒让点竹手里失了些许力气。点竹抓起地上沾血的剑，与此同时，上官浅的剑也架了过来。</p>
+          <p>「你的命，该还给孤山派了。」上官浅说完，冷剑的剑柄在她手上绕了个漂亮又利落的弯，银光闪动，剑刃直直插进点竹的心脉。</p>
+          <p>这一招，叫回龙落雪，一剑毙命。</p>
+          <p>点竹的招式，她这样还给点竹，合情合理。</p>
+          <p>上官浅蹲下身子，将点竹后脖颈的孤山印记用刀抹去。</p>
+          <p>伤了点竹的左臂，宫尚角没有追上来，知道自己的半月之蝇会在今天发作，但他也赌对了，除了宫门，还有人会想要点竹的性命。</p>
+          <p>他知道上官浅会来。</p>
+          <p>点竹死了，宫尚角提前安排好的宫门侍卫将前来接应的无锋残部逼到城门里面。</p>
+          <p>宫门对无锋最后的清算，开始了。</p>
+          <p>宫尚角站在木楼上，半月之蝇让他不能亲自参与到这场他期待已久的杀戮中，他隐在阴影里，看不清神色。</p>
+          <p>他应该痛快吗？</p>
+          <p>他的目光落在地上一摊血色里面。</p>
+          <p>地面上暗色的血污，像放肆生长的藤蔓一样一点点爬到上官浅藏蓝的衣服上，像是要把她拉回那一片浓郁的肮脏血水中。</p>
+          <p>上官浅半蹲着，右手上的冷刃还是随时会出击的姿势，她左手拿着点竹的刀，割下点竹的手。</p>
+          <p>如果不是要整个无锋相信点竹确实死了，她会割下点竹的首级带走。</p>
+          <p>她要用点竹的血肉祭奠孤山派枉死的人。</p>
+          <p>上官浅站起身。</p>
+          <p>但她没想到宫尚角的剑会拦住她。</p>
+          <p>宫尚角的眼神从她的脸上落到她的腰上。</p>
+          <p>上官浅握着冷刃的手微紧，现在宫门的人还在绞杀不知点竹死讯而赶来营救的无锋杀手，宫尚角体内的半月之蝇还在发作，她有很大把握离开这里。</p>
+          <p>冷刃被她握的更紧，却听到宫尚角略带沙哑的声音。</p>
+          <p>「孩子…」他的话顿住了。</p>
+          <p>上官浅是来杀人的，自然没穿那件她之前在乡下骗过宫门眼线时穿的腹部缝了一点布料的衣服。</p>
+          <p>她没回答，手里的冷刃已经抵在宫尚角的脖子上。</p>
+          <p>宫尚角摆手制住了一旁的侍卫，定定看着拿剑指着自己的上官浅。</p>
+          <p>上官浅的剑近了一分，她的声音很冷：「让路。」</p>
+          <p>侍卫们不敢近前，上官浅的剑抵着宫尚角的脖子，她快步走近，近身制住宫尚角，一步步往外退。</p>
+          <p>宫尚角由她架着，宫门的人在后面，得了宫尚角的意思，没有跟的太紧。</p>
+          <p>两人退到山路上。</p>
+          <p>离得很近，上官浅看得见宫尚角额头的冷汗。</p>
+          <p>「让你的人退到城外。」</p>
+          <p>上官浅声音很低，像混着血腥味的夜风，划在宫尚角耳朵上。</p>
+          <p>宫尚角低头看看腰上的东西，嘴边扯出一个很不好看的笑：「你知道用哪个。」</p>
+          <p>上官浅发出了响箭后，冷刃一转，定住了宫尚角。</p>
+          <p>「点竹死了，无锋也要没了。」宫尚角半靠在树上，看着她，「上官浅…」</p>
+          <p>「我不是上官浅。」</p>
+          <p>藏蓝色的身影一闪，消失在茫茫竹林中。</p>
+          <p>宫尚角玄色的身影一点点被竹林淹没，上官浅没有回头。</p>
+          <p>从前作为一个细作，她不会爱上她的目标，作为孤山派最后的遗孤，她也不会爱上宫门中的人。</p>
+          <p>一个骗过她，利用过她又放她走的人。</p>
+          <p class="art-highlight">她与宫尚角之间，如果有过松动，那些瞬间，也只能是瞬间，就像墨池里惊起的涟漪，最终会回归长久的静寂。</p>
+          <p>他们之间没有太多可以奢侈的称为长久的东西。</p>
+          <p>信任，对两人来说，都是一种危险的奢求。</p>
+          <p>天色微亮，她离孤山派，越来越近。</p>
+        </div>
+        <footer class="art-end"><span class="art-end-mark">— 节选完 · 完整版见 LOFTER —</span></footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 个人播客脚本 ============ -->
+<section class="section section-alt" id="sec-podcast">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04</div>
+      <div class="sec-head-text">
+        <h2>个人播客脚本</h2>
+        <p id="podcastOneLine"></p>
+      </div>
+    </div>
+
+    <div class="podcast-card reveal" id="podcastCard"></div>
+
+    <div class="reader reader-simple reveal" id="podReader">
+      <aside class="reader-side">
+        <div class="side-head">
+          <h3>脚本结构</h3>
+          <p class="side-sub" id="podSideSub"></p>
+        </div>
+        <nav class="side-nav" id="podNav"></nav>
+      </aside>
+      <div class="reader-main">
+        <article class="reader-article" id="podArticle"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 文学研究类论文 ============ -->
+<section class="section" id="sec-research">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">05</div>
+      <div class="sec-head-text">
+        <h2>文学研究类论文</h2>
+        <p id="researchOneLine"></p>
+      </div>
+    </div>
+    <div class="paper-list" id="paperList"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-left">
+      <span class="brand-mark small">W</span>
+      <div>
+        <p class="footer-name">王雅睿 · 创意写作作品合集</p>
+        <p class="footer-tip">合订本 · 2026 秋招求职作品集</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>点击任一作品标题可展开阅读全文</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="content-wuxia.js"></script>
+<script src="content-fanfic.js"></script>
+<script src="content-misc.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

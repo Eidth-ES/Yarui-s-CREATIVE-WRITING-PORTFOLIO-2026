@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王雅睿 · 06 七猫实习板块（样板）</title>
+<style>
+:root{
+  --bg:#f7f8fa; --card:#fff; --line:rgba(0,0,0,.08);
+  --t1:#1a1a1a; --t3:#555; --t4:#8a8f99;
+  --blue:#0052D9; --blue-soft:rgba(0,82,217,.06);
+  --red:#d9304f;
+  --serif:"Songti SC","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.draft-bar{background:linear-gradient(90deg,#0052D9,#266FE8);color:#fff;padding:12px 0;font-size:13px;text-align:center;letter-spacing:.5px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:13px 28px;display:flex;gap:24px;align-items:center}
+.nav b{font-size:15px}.nav a{color:var(--t3);text-decoration:none;font-size:13px}.nav a:hover{color:var(--blue)}
+
+section{padding:64px 0 56px}
+.sec-head{display:flex;gap:22px;margin-bottom:34px}
+.sec-num{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--blue);line-height:1}
+.sec-head h2{font-size:25px;margin-bottom:8px}
+.sec-head p{color:var(--t3);font-size:14.5px;max-width:820px}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:12px;color:var(--blue);background:var(--blue-soft);border:1px solid rgba(0,82,217,.15);border-radius:999px;padding:3px 12px}
+
+/* 简历四模块 */
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-bottom:18px}
+.mod-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.mod-head .mi{font-family:var(--serif);font-size:15px;color:var(--blue);border:1px solid rgba(0,82,217,.25);border-radius:8px;padding:2px 9px}
+.mod-head h3{font-size:17px}
+.mod p{color:var(--t3);font-size:14px}
+.mod ul{margin:10px 0 0 18px;color:var(--t3);font-size:13.8px}
+.mod li{margin-bottom:5px}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.kpi span{font-size:12.5px;background:#f2f5fb;border:1px solid rgba(0,82,217,.12);color:var(--blue);border-radius:8px;padding:5px 12px}
+.quote{margin-top:14px;padding:16px 20px;border-left:2px solid rgba(0,82,217,.4);background:var(--blue-soft);border-radius:0 10px 10px 0;font-family:var(--serif);font-size:14.5px;line-height:2;color:var(--t1)}
+.quote em{display:block;margin-top:8px;font-size:12.5px;color:var(--t4);font-family:"PingFang SC",sans-serif}
+
+/* 专辑 */
+.albums{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.album{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s,border-color .25s}
+.album:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.09);border-color:rgba(0,82,217,.35)}
+.album.open{border-color:var(--blue)}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#f0f2f6;padding:6px}
+.mosaic img{width:100%;height:150px;object-fit:contain;object-position:center;background:#fff;border-radius:4px}
+.album-meta{padding:16px 18px}
+.album-meta h4{font-size:15.5px;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
+.album-meta h4 i{font-style:normal;font-size:12px;color:var(--blue);transition:transform .3s}
+.album.open .album-meta h4 i{transform:rotate(180deg)}
+.album-meta p{font-size:12.5px;color:var(--t4)}
+.album-meta .sum{font-size:12.5px;color:var(--t3);margin-top:6px}
+
+.album-body{display:none;grid-column:1/-1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+.album-body.show{display:block}
+.album-wrap{display:grid;grid-template-columns:1fr;gap:0}
+
+.item{display:grid;grid-template-columns:340px 1fr;gap:24px;padding:22px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:none}
+.item .imgbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px}
+.item img{width:100%;display:block;border-radius:8px;cursor:zoom-in}
+.item .meta h5{font-size:15px;margin-bottom:6px}
+.item .meta .sub{font-size:12.5px;color:var(--t4);margin-bottom:12px}
+.dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.dcell{background:#f6f8fc;border:1px solid rgba(0,82,217,.1);border-radius:10px;padding:10px 14px}
+.dcell b{display:block;font-size:17px;color:var(--blue);font-weight:700;line-height:1.3}
+.dcell span{font-size:11.5px;color:var(--t4)}
+.dcell.todo b{color:var(--t4);font-size:14px}
+.note{font-size:12.8px;color:var(--t3);background:#fffdf5;border:1px solid rgba(214,158,46,.25);border-radius:10px;padding:10px 14px;line-height:1.8}
+.note b{color:#a9741a}
+.src{font-size:11.5px;color:var(--t4);margin-top:8px}
+
+/* 闭环 */
+.loop{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.loop span{font-size:12.5px;background:#f2f5fb;border:1px solid rgba(0,82,217,.12);border-radius:8px;padding:6px 12px;color:var(--blue)}
+.loop span.sep{background:none;border:none;color:var(--t4);padding:6px 0}
+
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(12,14,20,.9);display:none;align-items:center;justify-content:center;z-index:99;cursor:zoom-out;padding:30px}
+#lb.show{display:flex}
+#lb img{max-width:96%;max-height:94%;border-radius:8px}
+
+footer{padding:36px 0 60px;color:var(--t4);font-size:12.5px;text-align:center}
+@media (max-width:900px){
+  .albums{grid-template-columns:1fr}
+  .item{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="draft-bar">06 板块样板 · 按简历四条逻辑重排 · 图片专辑可点击展开 · 数据来自七猫周度运营台账</div>
+
+<nav class="nav"><div class="nav-inner">
+  <b>王雅睿 · 06</b>
+  <a href="#m1">内容策划</a><a href="#m2">数据复盘</a><a href="#m3">访谈+AI</a><a href="#m4">协作与审查</a><a href="#albums">图集专辑</a>
+</div></nav>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div>
+        <h2>实习 · 七猫短故事账号内容策划</h2>
+        <p>运营短故事品牌小红书矩阵账号（官号 + 作者号），围绕读者侧与作者侧双线专题策划内容；从增长目标拆选题、定预热节奏与上线排期。</p>
+        <div class="tag-row"><span class="tag">小红书矩阵运营</span><span class="tag">选题策划</span><span class="tag">周度数据复盘</span><span class="tag">AI 协同生产</span><span class="tag">跨部门协作</span><span class="tag">内容安全审查</span></div>
+      </div>
+    </div>
+
+    <!-- 模块 1 -->
+    <div class="mod" id="m1">
+      <div class="mod-head"><span class="mi">01</span><h3>内容策划</h3></div>
+      <p>运营短故事品牌小红书矩阵账号，围绕读者与作者侧专题策划专题线内容；跟进编辑例会，从增长目标拆选题策略、预热节奏与上线排期。</p>
+      <ul>
+        <li><b>双线内容矩阵：</b>读者侧（例文、红文拆解、热门梗征集）+ 作者侧（月度收稿方向、节点收稿、福利汇总、招聘专题）</li>
+        <li><b>排期机制：</b>周维度分配栏目——周三例文分享 / 周四新梗速递 / 周末收稿方向或征文，例会确认选题后进入「预热—发布—复盘」节奏</li>
+        <li><b>选题来源：</b>编辑例会拆解当月增长目标 → 反推题材方向（如六月：高考情绪线、反差人设、青春痛点、脑洞系统、世情打脸）</li>
+      </ul>
+      <div class="kpi"><span>三个月账号涨粉 1.2W → 1.7W</span><span>官号周度新增粉丝峰值 +439（+134%）</span><span>单周互动数峰值 2,526（+168%）</span></div>
+      <div class="quote">
+        「六⽉收稿⽅向：⾼考【以情绪线为主的虐爽/虐⽂】、情绪流【反差⼈设/创新⼈设/区别对待 + 情绪流】、⻘春痛点【久别重逢/越界/异地/暗恋 + ⽕葬场】、脑洞【系统/时空穿越/弹幕/⼼声】、世情【打脸复仇爽⽂】」<br>
+        <em>—— 编辑例会选题拆解（周度台账 · 需求整理环节）</em>
+      </div>
+    </div>
+
+    <!-- 模块 2 -->
+    <div class="mod" id="m2">
+      <div class="mod-head"><span class="mi">02</span><h3>数据复盘 + 优化选题</h3></div>
+      <p>监测账号核心数据，主持周度数据复盘；通过异常数据识别竞品同质化问题，针对内容缺口推动新内容分支搭建。</p>
+      <ul>
+        <li><b>周度复盘机制：</b>逐条笔记核对点赞 / 收藏 / 涨粉 / 封面点击率 / 平均观看时长，异常数据（如人均观看时长 281 秒）单独标注排查</li>
+        <li><b>同质化识别：</b>热门梗栏目连续 3 周赞藏下滑（202/176 → 142/125 → 106/93），判定题材同质化，据此收缩该栏目、另起分支</li>
+        <li><b>新内容分支：</b>从「热门梗征集」拆分出「短篇新梗速递」新栏目——首弹即 180 赞 / 145 藏，第四弹 150 赞 / 139 藏，平均观看时长由 12–19 秒提升至 29.7 秒</li>
+      </ul>
+      <div class="kpi"><span>内容专题点击率提升 20%+</span><span>新分支栏目平均观看时长 +56%</span><span>周度复盘 8 次 · 逐笔记归因</span></div>
+      <div class="quote">
+        「新梗速递第三弹 点赞 147 / 收藏 99，同时段对比第二弹热度回升（112 / 84）【本贴涨粉 10，平均观看时⻓ 21.5 秒，⽐之前两篇新梗速递好，之前两篇都是 12–19 秒】」<br>
+        <em>—— 周度数据复盘（5.20 台账）</em>
+      </div>
+    </div>
+
+    <!-- 模块 3 -->
+    <div class="mod" id="m3">
+      <div class="mod-head"><span class="mi">03</span><h3>访谈 + AI 辅助</h3></div>
+      <p>按作者激励与访谈需求编写结构化 prompt，由 AI 产出方案与大纲初稿，并接入 AIGC 完成主题配图；人工复核内容框架并判断作者情感维护重点，推动内容迁移方案落地。</p>
+      <ul>
+        <li><b>作者访谈线：</b>围绕作者激励需求设计采访提纲，产出《酸奶采访》等作者故事内容——用于作者侧情感维护与社区氛围建设</li>
+        <li><b>AI 协同流程：</b>结构化 prompt → AI 出方案与大纲初稿 → 人工复核框架 / 判定情感维护重点 → AIGC 主题配图 → 发布</li>
+        <li><b>AI 风险判断：</b>台账中记录「热门梗被平台判定含 AI」「首页推荐由 32% 腰斩至 18%」，据此调整关键词与配图策略</li>
+      </ul>
+      <div class="quote">
+        「她（编辑七七）在我写得丧⽓的时候，会帮我想梗想⽅向，经常给我发例⽂，⿎励我，也会上⼿帮我修⽂、修导语…… 对于我⽽⾔，她是我的柳暗花明⼜⼀村，也像是选⻢场的伯乐。」<br>
+        <em>—— 《酸奶采访》节选 · 作者侧情感维护的真实反馈</em>
+      </div>
+    </div>
+
+    <!-- 模块 4 -->
+    <div class="mod" id="m4">
+      <div class="mod-head"><span class="mi">04</span><h3>跨部门协作与安全审查</h3></div>
+      <p>协调编辑、设计、审核、公关四端完成「选题—生产—发布—舆论处理—案例归档」闭环，梳理敏感内容案例库 50+ 条。</p>
+      <div class="loop">
+        <span>选题（编辑）</span><span class="sep">→</span><span>生产（设计 / Canva）</span><span class="sep">→</span><span>发布（运营）</span><span class="sep">→</span><span>舆论处理（审核 / 公关）</span><span class="sep">→</span><span>案例归档</span>
+      </div>
+      <ul>
+        <li><b>真实处置案例：</b>红文因尺度问题首次发布违规 → 二次发布脱敏打码后恢复正常；此后发布前重点核查敏感内容</li>
+        <li><b>平台风险应对：</b>内容含「AI」字样被平台判定为 AI 生成导致限流 → 调整表述与配图；招聘帖因重复标题被限流 → 改为软广形式重发</li>
+        <li><b>沉淀资产：</b>敏感内容案例库 50+ 条，用于新内容发布前对照检查</li>
+      </ul>
+      <div class="kpi"><span>四端协作闭环</span><span>敏感内容案例库 50+ 条</span><span>违规内容二次处置 0 复发</span></div>
+    </div>
+
+    <!-- 图集专辑 -->
+    <h3 style="margin:38px 0 6px;font-size:18px;">内容图集 · 点击专辑展开</h3>
+    <p style="color:var(--t4);font-size:13px;margin-bottom:18px;">数据均取自七猫周度运营台账（逐笔记记录点赞 / 收藏 / 涨粉 / 封面点击率 / 平均观看时长）；点击图片可放大查看完整截图。</p>
+
+    <div class="albums" id="albums">
+
+      <!-- 专辑 1 -->
+      <div>
+        <div class="album" data-album="a1">
+          <div class="mosaic">
+            <img src="assets-0608/收稿专题-5月.jpg" alt=""><img src="assets-0608/收稿专题-6月.jpg" alt=""><img src="assets-0608/收稿专题-节点.jpg" alt="">
+          </div>
+          <div class="album-meta">
+            <h4>作者收稿专题 <i>⌄</i></h4>
+            <p>5 篇 · 月度方向 / 节点 / 作者侧</p>
+            <div class="sum">最高单篇：点赞 787 · 收藏 780 · 单帖涨粉 220</div>
+          </div>
+        </div>
+        <div class="album-body" id="a1">
+          <div class="album-wrap">
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/收稿专题-6月.jpg" alt="六月重点收稿方向"></div>
+              <div class="meta">
+                <h5>六月重点收稿方向</h5>
+                <div class="sub">作者侧 · 月度收稿专题</div>
+                <div class="dl">
+                  <div class="dcell"><b>787</b><span>点赞</span></div>
+                  <div class="dcell"><b>780</b><span>收藏</span></div>
+                  <div class="dcell"><b>+220</b><span>本贴涨粉</span></div>
+                  <div class="dcell"><b>60s</b><span>平均观看时长</span></div>
+                </div>
+                <div class="note">全期官号<b>单篇数据最高</b>的笔记：较同时段五月重点收稿（点赞 591 / 收藏 646）热度更高；当周官号新增粉丝 439（+134%）、互动数 2,526（+168%），首页推荐回升至 38%。</div>
+                <div class="src">数据来源：周度运营台账 6.3</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/收稿专题-5月.jpg" alt="五月重点收稿方向"></div>
+              <div class="meta">
+                <h5>五月重点收稿方向</h5>
+                <div class="sub">作者侧 · 月度收稿专题</div>
+                <div class="dl">
+                  <div class="dcell"><b>586</b><span>点赞</span></div>
+                  <div class="dcell"><b>637</b><span>收藏</span></div>
+                  <div class="dcell"><b>当月最高</b><span>官号单篇</span></div>
+                  <div class="dcell"><b>+313</b><span>当周官号涨粉</span></div>
+                </div>
+                <div class="note">收藏数高于点赞，说明<b>内容具备工具属性、被作者留存复用</b>；当周官号互动数 2,028（环比 +336%），带动首页推荐与整体曝光上行。</div>
+                <div class="src">数据来源：周度运营台账 5.6</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/收稿专题-节点.jpg" alt="节点收稿专题"></div>
+              <div class="meta">
+                <h5>节点收稿专题 · 高考热点文</h5>
+                <div class="sub">作者侧 · 热点节点专题</div>
+                <div class="dl">
+                  <div class="dcell"><b>237</b><span>点赞</span></div>
+                  <div class="dcell"><b>210</b><span>收藏</span></div>
+                  <div class="dcell"><b>优于同期</b><span>男频收稿 100 / 122</span></div>
+                  <div class="dcell"><b>热点窗口</b><span>高考周期</span></div>
+                </div>
+                <div class="note">节点型选题验证：<b>借势高考热点</b>，同期常规收稿（男频）仅 100 赞 / 122 藏，节点专题热度约为其 2 倍，验证了「节点 + 情绪线」的选题策略。</div>
+                <div class="src">数据来源：周度运营台账 5.13</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/作者侧-收稿专题1.jpg" alt="作者侧收稿专题"></div>
+              <div class="meta">
+                <h5>作者侧 · 收稿专题</h5>
+                <div class="sub">定向作者群体的收稿向内容</div>
+                <div class="dl">
+                  <div class="dcell"><b>124</b><span>点赞（中篇收稿）</span></div>
+                  <div class="dcell"><b>103</b><span>收藏（中篇收稿）</span></div>
+                  <div class="dcell todo"><b>待核对</b><span>图片对应帖次</span></div>
+                  <div class="dcell"><b>+14</b><span>本贴涨粉</span></div>
+                </div>
+                <div class="note"><b>需你确认：</b>此图对应哪一期收稿专题？台账中收稿类笔记赞藏区间为 115–787，我会按你确认的帖次替换精确数据。</div>
+                <div class="src">参考：周度运营台账 5.27（中篇收稿）</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/作者侧-收稿福利2.jpg" alt="作者侧收稿福利"></div>
+              <div class="meta">
+                <h5>作者侧 · 收稿福利汇总</h5>
+                <div class="sub">月度福利 / 激励向内容</div>
+                <div class="dl">
+                  <div class="dcell"><b>163</b><span>点赞（五月福利汇总）</span></div>
+                  <div class="dcell"><b>141</b><span>收藏（五月福利汇总）</span></div>
+                  <div class="dcell"><b>122</b><span>点赞（暑期新福利）</span></div>
+                  <div class="dcell"><b>68</b><span>收藏（暑期新福利）</span></div>
+                </div>
+                <div class="note">福利类内容为作者侧基础运营盘，热度稳定但天花板低于收稿方向类；暑期新福利图被平台提示 AI 判定，属内容安全需持续关注的类别。</div>
+                <div class="src">数据来源：周度运营台账 5.6 / 6.3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 专辑 2 -->
+      <div>
+        <div class="album" data-album="a2">
+          <div class="mosaic">
+            <img src="assets-0608/招聘专题-实习编辑.jpg" alt=""><img src="assets-0608/招聘专题-实习编辑2.jpg" alt=""><img src="assets-0608/招聘专题-责编招聘.jpg" alt="">
+          </div>
+          <div class="album-meta">
+            <h4>招聘专题 <i>⌄</i></h4>
+            <p>3 篇 · 实习编辑 / 责编招聘</p>
+            <div class="sum">封面点击率高于账号均值 · 评论私信集中</div>
+          </div>
+        </div>
+        <div class="album-body" id="a2">
+          <div class="album-wrap">
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/招聘专题-实习编辑.jpg" alt="实习编辑招聘"></div>
+              <div class="meta">
+                <h5>实习编辑招聘（上海 / 武汉）</h5>
+                <div class="sub">招聘专题 · 首版</div>
+                <div class="dl">
+                  <div class="dcell"><b>54</b><span>点赞</span></div>
+                  <div class="dcell"><b>33</b><span>收藏</span></div>
+                  <div class="dcell"><b>较高</b><span>封面点击率</span></div>
+                  <div class="dcell"><b>较多</b><span>评论 / 私信</span></div>
+                </div>
+                <div class="note">招聘类内容不追赞藏，看的是<b>转化意图</b>：该帖浏览量与封面点击率均不错，评论与私信集中在「投递渠道、硕⼠可否投递、26 届是否有 HC」，可直接反哺招聘 FAQ 与下一版选题。</div>
+                <div class="src">数据来源：周度运营台账 4.22 复盘</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/招聘专题-实习编辑2.jpg" alt="实习编辑招聘软广"></div>
+              <div class="meta">
+                <h5>实习编辑招聘 · 软广版</h5>
+                <div class="sub">招聘专题 · 改版（应对平台限流）</div>
+                <div class="dl">
+                  <div class="dcell"><b>50</b><span>点赞</span></div>
+                  <div class="dcell"><b>14</b><span>收藏</span></div>
+                  <div class="dcell"><b>23.8s</b><span>平均观看时长</span></div>
+                  <div class="dcell"><b>+2</b><span>本贴涨粉</span></div>
+                </div>
+                <div class="note">首版曾因<b>同标题重发被平台判定重复内容限流</b>，改版为软广形式后重新投放；点击率仍高于账号均值，验证了「硬广 → 软广」的内容迁移策略。</div>
+                <div class="src">数据来源：周度运营台账 5.20</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/招聘专题-责编招聘.jpg" alt="责编招聘"></div>
+              <div class="meta">
+                <h5>责编招聘</h5>
+                <div class="sub">招聘专题 · 社招方向</div>
+                <div class="dl">
+                  <div class="dcell todo"><b>待补</b><span>台账未单列</span></div>
+                  <div class="dcell todo"><b>待补</b><span>数据待补</span></div>
+                </div>
+                <div class="note"><b>需你补充：</b>周度台账未单独记录该帖数据。若有后台截图或数据记录，我可以补上并统一格式。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 专辑 3 -->
+      <div>
+        <div class="album" data-album="a3">
+          <div class="mosaic">
+            <img src="assets-0608/新梗速递-3.jpg" alt=""><img src="assets-0608/新梗速递-4.jpg" alt=""><img src="assets-0608/新梗速递7.jpg" alt="">
+          </div>
+          <div class="album-meta">
+            <h4>差异化新内容分支 · 新梗速递 <i>⌄</i></h4>
+            <p>3 篇 · 第 3 / 4 / 7 弹</p>
+            <div class="sum">平均观看时长 12–19s → 29.7s</div>
+          </div>
+        </div>
+        <div class="album-body" id="a3">
+          <div class="album-wrap">
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/新梗速递-3.jpg" alt="新梗速递第三弹"></div>
+              <div class="meta">
+                <h5>短篇新梗速递 · 第三弹</h5>
+                <div class="sub">新分支栏目 · 青春遗憾 + 久别重逢</div>
+                <div class="dl">
+                  <div class="dcell"><b>147</b><span>点赞</span></div>
+                  <div class="dcell"><b>99</b><span>收藏</span></div>
+                  <div class="dcell"><b>+10</b><span>本贴涨粉</span></div>
+                  <div class="dcell"><b>21.5s</b><span>平均观看时长</span></div>
+                </div>
+                <div class="note">关键信号：<b>平均观看时长 21.5 秒，高于前两弹的 12–19 秒</b>——说明新分支的内容粘性在改善，而不只是靠封面拉点击。</div>
+                <div class="src">数据来源：周度运营台账 5.20</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/新梗速递-4.jpg" alt="新梗速递第四弹"></div>
+              <div class="meta">
+                <h5>短篇新梗速递 · 第四弹</h5>
+                <div class="sub">新分支栏目 · 民俗梗（山神 / 水乡婚船）</div>
+                <div class="dl">
+                  <div class="dcell"><b>150</b><span>点赞</span></div>
+                  <div class="dcell"><b>139</b><span>收藏</span></div>
+                  <div class="dcell"><b>+15</b><span>本贴涨粉</span></div>
+                  <div class="dcell"><b>29.7s</b><span>平均观看时长</span></div>
+                </div>
+                <div class="note">收藏率（收藏 / 点赞 = 0.93）为本组最高，接近「例文工具类内容」的收藏水平；平均观看时长再升至 29.7 秒，<b>新分支跑通</b>。</div>
+                <div class="src">数据来源：周度运营台账 6.3</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="imgbox"><img src="assets-0608/新梗速递7.jpg" alt="新梗速递第七弹"></div>
+              <div class="meta">
+                <h5>短篇新梗速递 · 第七弹</h5>
+                <div class="sub">新分支栏目 · 后续弹次</div>
+                <div class="dl">
+                  <div class="dcell todo"><b>待补</b><span>台账未覆盖</span></div>
+                  <div class="dcell todo"><b>待补</b><span>数据待补</span></div>
+                </div>
+                <div class="note"><b>需你补充：</b>台账记录至第 4 弹前后。若有第七弹后台数据，补上后可完整呈现「新分支从第 1 弹跑到第 7 弹」的成长曲线。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>06 板块样板 · 数据取自七猫周度运营台账 · 待核对项已标注</footer>
+
+<div id="lb"><img alt=""></div>
+<script>
+document.querySelectorAll('.album').forEach(function(a){
+  a.addEventListener('click',function(){
+    var body=document.getElementById(a.dataset.album);
+    var open=body.classList.toggle('show');
+    a.classList.toggle('open',open);
+  });
+});
+var lb=document.getElementById('lb'),lbImg=lb.querySelector('img');
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(t.tagName==='IMG'&&t.closest('.item')){ lbImg.src=t.src; lb.classList.add('show'); }
+});
+lb.addEventListener('click',function(){ lb.classList.remove('show'); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('show'); });
+</script>
+</body>
+</html>
